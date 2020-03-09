@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import Card from '../shared/card'
 import { globalStyles } from '../styles/global'
 
 export default function Home({ navigation }) {
@@ -12,7 +13,7 @@ export default function Home({ navigation }) {
     },
     {
       title: 'Gotta Catch Them All (again)',
-      raintg: 4,
+      rating: 4,
       body: 'Lorem ipsum',
       key: '2',
     },
@@ -31,7 +32,9 @@ export default function Home({ navigation }) {
 
     return (
       <TouchableOpacity onPress={pressHandler}>
-        <Text style={globalStyles.titleText}>{item.title}</Text>
+        <Card>
+          <Text style={globalStyles.titleText}>{item.title}</Text>
+        </Card>
       </TouchableOpacity>
     )
   }
